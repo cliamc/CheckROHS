@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckROHS", "CheckROHS\CheckROHS.csproj", "{21F8AF54-5489-4842-BC5F-1385EA8D2F8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBHelper", "..\DBHelper\DBHelper\DBHelper.csproj", "{DA8D1A28-5607-4187-9CE8-661C4CA5034C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCheckRoHS", "SetupCheckRoHS\SetupCheckRoHS.vdproj", "{CCC42ED3-39F2-4388-BAF6-9F4EE69E6EF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,12 @@ Global
 		{21F8AF54-5489-4842-BC5F-1385EA8D2F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F8AF54-5489-4842-BC5F-1385EA8D2F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F8AF54-5489-4842-BC5F-1385EA8D2F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8D1A28-5607-4187-9CE8-661C4CA5034C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8D1A28-5607-4187-9CE8-661C4CA5034C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8D1A28-5607-4187-9CE8-661C4CA5034C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8D1A28-5607-4187-9CE8-661C4CA5034C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC42ED3-39F2-4388-BAF6-9F4EE69E6EF3}.Debug|Any CPU.ActiveCfg = Debug
+		{CCC42ED3-39F2-4388-BAF6-9F4EE69E6EF3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
