@@ -62,29 +62,37 @@ namespace CheckROHS
                 if (anitem[0] == '%') continue;
 
                 bool rohsTag;
+
                 bool subTag = evps.CheckSubRohs(anitem, out rohsTag);
+
+                string pRev = "";
+                // Need to get the material part revision
+                if (anitem.IndexOf("=") == -1)
+                {
+                    pRev = eprev.GetRevision(anitem);
+                }
+                else
+                {
+                    string pn = "";
+                    DBHelper.Util.ExtractPartInfo(anitem, ref pn, ref pRev);
+                }
+
+                //if (!subTag)                                              // Use amc.FlattenedBOM table in Epicor instead; 11/1/2021
+                //{
+                //    MfgDataSubPart mdsp = new MfgDataSubPart();
+                //    subTag = mdsp.CheckPartExist(anitem);
+                //}
                 if (!subTag)
                 {
-                    MfgDataSubPart mdsp = new MfgDataSubPart();
-                    subTag = mdsp.CheckPartExist(anitem);
+                    EpicorFlattenedBOM efb = new EpicorFlattenedBOM();
+                    subTag = efb.GetSubBit(anitem, pRev);
                 }
 
                 if ( subTag )
                 {
                     string partNum = anitem; ;
-                    string pRev = "";
-                    // find the version first
-                    if (anitem.IndexOf("=") == -1)
-                    {
-                        pRev = eprev.GetRevision(anitem);
-                    }
-                    else
-                    {
-                        string pn = "";
-                        DBHelper.Util.ExtractPartInfo(anitem, ref pn, ref pRev);
-                    }
-
-                    PartBOM pb = new PartBOM(partNum, pRev);
+                    // find the version above first
+                    PartBOM pb = new PartBOM(partNum, pRev);                            // Recursive call
                     if (!pb.GetBomRohsFlag())
                     {
                         this.bomRohs = false;
