@@ -34,7 +34,6 @@ namespace CheckROHS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckRoHS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.verText = new System.Windows.Forms.TextBox();
-            this.verUD = new System.Windows.Forms.NumericUpDown();
             this.resetBtn = new System.Windows.Forms.Button();
             this.chkBtn = new System.Windows.Forms.Button();
             this.verLabel = new System.Windows.Forms.Label();
@@ -48,14 +47,12 @@ namespace CheckROHS
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.verUD)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.verText);
-            this.groupBox1.Controls.Add(this.verUD);
             this.groupBox1.Controls.Add(this.resetBtn);
             this.groupBox1.Controls.Add(this.chkBtn);
             this.groupBox1.Controls.Add(this.verLabel);
@@ -79,39 +76,6 @@ namespace CheckROHS
             this.verText.ReadOnly = true;
             this.verText.Size = new System.Drawing.Size(100, 20);
             this.verText.TabIndex = 10;
-            // 
-            // verUD
-            // 
-            this.verUD.BackColor = System.Drawing.Color.White;
-            this.verUD.DecimalPlaces = 2;
-            this.verUD.Enabled = false;
-            this.verUD.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.verUD.Location = new System.Drawing.Point(277, 142);
-            this.verUD.Margin = new System.Windows.Forms.Padding(2);
-            this.verUD.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.verUD.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.verUD.Name = "verUD";
-            this.verUD.ReadOnly = true;
-            this.verUD.Size = new System.Drawing.Size(100, 20);
-            this.verUD.TabIndex = 9;
-            this.verUD.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.verUD.Visible = false;
             // 
             // resetBtn
             // 
@@ -231,7 +195,6 @@ namespace CheckROHS
             this.Text = "Check RoHS";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.verUD)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -250,7 +213,6 @@ namespace CheckROHS
         private System.Windows.Forms.Button chkBtn;
         private System.Windows.Forms.Label verLabel;
         private System.Windows.Forms.Button resetBtn;
-        private System.Windows.Forms.NumericUpDown verUD;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ImageList imageList1;
