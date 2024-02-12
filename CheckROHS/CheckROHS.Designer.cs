@@ -33,6 +33,7 @@ namespace CheckROHS
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckRoHS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.verText = new System.Windows.Forms.TextBox();
             this.resetBtn = new System.Windows.Forms.Button();
             this.chkBtn = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@ namespace CheckROHS
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.verText);
             this.groupBox1.Controls.Add(this.resetBtn);
             this.groupBox1.Controls.Add(this.chkBtn);
@@ -67,6 +69,17 @@ namespace CheckROHS
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input and Check";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(277, 29);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(50, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "RMA";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // verText
             // 
@@ -218,6 +231,7 @@ namespace CheckROHS
         private ImageList imageList1;
         private TreeView treeView1;
         private TextBox verText;
+        private CheckBox checkBox1;
     }
 }
 
