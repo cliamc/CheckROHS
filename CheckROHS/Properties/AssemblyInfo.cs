@@ -34,4 +34,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.3")]
 //[assembly: AssemblyVersion("1.0.0.3")]
-[assembly: AssemblyVersion("1.0.0.4")]                          // Use Epicor table FlattenedBOM to check if a part is a sub or not; 11/3/2021
+//[assembly: AssemblyVersion("1.0.0.4")]                          // Use Epicor table FlattenedBOM to check if a part is a sub or not; 11/3/2021
+[assembly: AssemblyVersion("1.0.0.5")]                          // For RMA items, include InActive status entries
+//[assembly: AssemblyVersion("1.0.0.5")]                          // Upgrade Epicor 9.05 to Kinetic 11.1
