@@ -13,6 +13,8 @@ namespace CheckROHS
 {
     public partial class CheckRoHS : Form
     {
+        bool isRMA = false;
+
         public CheckRoHS()
         {
             InitializeComponent();
@@ -77,6 +79,8 @@ namespace CheckROHS
 
         private void chkBtn_Click(object sender, EventArgs e)
         {
+            isRMA = checkBox1.Checked;
+
             try
             {
                 // Process input
@@ -120,7 +124,7 @@ namespace CheckROHS
                     // application logic start here
 
                     ///PartBOM pb = new PartBOM(partText.Text, verUD.Value.ToString());
-                    PartBOM pb = new PartBOM(partText.Text, verText.Text.ToString());
+                    PartBOM pb = new PartBOM(partText.Text, verText.Text.ToString(), isRMA);
                     bool rohsYorn = pb.GetBomRohsFlag();
 
                     // Save the checking result to Job table
@@ -208,6 +212,8 @@ namespace CheckROHS
             this.ActiveControl = jobText;
             //partText.Enabled = true;
             //verUD.Enabled = true;
+
+            checkBox1.Checked = false;
         }
 
 
@@ -215,6 +221,13 @@ namespace CheckROHS
         {
             if (e.KeyCode == Keys.Tab)
                 e.IsInputKey = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            chkBtn.Enabled = true;
+            chkBtn.Select();
+            resetBtn.Enabled = true;
         }
 
         //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
