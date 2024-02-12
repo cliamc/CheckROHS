@@ -21,16 +21,17 @@ namespace CheckROHS
 
         public string PartNum;
         public string RevNum;
-        //public bool InActive = false;
+        public bool isRMA = false;
 
         private List<string> partBom = new List<string>();
         public List<MtlRohs> endMtls = new List<MtlRohs>();
         public List<PartBOM> subs = new List<PartBOM>();
 
-        public PartBOM(string pn, string ver)
+        public PartBOM(string pn, string ver, bool isRMA)
         {
             this.PartNum = pn;
             this.RevNum = ver;
+            this.isRMA = isRMA;
 
             InitBOM();
             SortMtls();
@@ -63,7 +64,7 @@ namespace CheckROHS
 
                 bool rohsTag;
 
-                bool subTag = evps.CheckSubRohs(anitem, out rohsTag);
+                bool subTag = evps.CheckSubRohs(anitem, out rohsTag, isRMA);
 
                 string pRev = "";
                 // Need to get the material part revision
@@ -92,7 +93,7 @@ namespace CheckROHS
                 {
                     string partNum = anitem; ;
                     // find the version above first
-                    PartBOM pb = new PartBOM(partNum, pRev);                            // Recursive call
+                    PartBOM pb = new PartBOM(partNum, pRev, isRMA);                            // Recursive call
                     if (!pb.GetBomRohsFlag())
                     {
                         this.bomRohs = false;
